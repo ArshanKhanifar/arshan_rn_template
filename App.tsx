@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
-import {Login} from './pages/Login';
+import LoginScreen from './pages/LoginScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -13,9 +13,9 @@ const App = () => {
           getExampleScreens(Stack)
            */}
         <Stack.Screen
-          name={'Login'}
-          component={Login}
-          options={{title: 'Overview'}}
+          name={'LoginScreen'}
+          component={LoginScreen}
+          options={{title: 'Login'}}
         />
       </Stack.Navigator>
     </NavigationContainer>
