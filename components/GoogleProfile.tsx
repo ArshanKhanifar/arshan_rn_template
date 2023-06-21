@@ -1,17 +1,23 @@
 import React from 'react';
-import {View, Image, Text} from 'react-native';
+import {View, Image, Text, StyleSheet} from 'react-native';
+import {User} from '@react-native-google-signin/google-signin';
+import userFallback from '../assets/user-fallback-icon.png';
 
-const GoogleProfile = ({user}) => {
+const GoogleProfile = ({user}: {user: User['user']}) => {
   return (
     <View style={styles.container}>
-      <Image source={{uri: user.photo}} style={styles.photo} />
+      {user.photo ? (
+        <Image source={{uri: user.photo}} style={styles.photo} />
+      ) : (
+        <Image source={userFallback} style={styles.photo} />
+      )}
       <Text style={styles.name}>{user.name}</Text>
       <Text style={styles.email}>{user.email}</Text>
     </View>
   );
 };
 
-const styles = {
+const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     justifyContent: 'center',
@@ -31,6 +37,6 @@ const styles = {
   email: {
     fontSize: 16,
   },
-};
+});
 
 export default GoogleProfile;

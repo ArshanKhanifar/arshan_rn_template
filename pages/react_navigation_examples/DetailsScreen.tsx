@@ -1,12 +1,19 @@
 import {Button, Text, View} from 'react-native';
-import {NavigationScreenProps} from '../../types/Navigation';
+import {RouteProp} from '@react-navigation/native';
+import {NavDemoTypes} from './navdemotypes';
+import {NativeStackNavigationProp} from '@react-navigation/native-stack';
 
-export const DetailsScreen = ({
+type DetailsScreenProps = {
+  navigation: NativeStackNavigationProp<NavDemoTypes, 'DetailsScreen'>;
+  route: RouteProp<NavDemoTypes, 'DetailsScreen'>;
+};
+
+export const DetailsScreen: React.FC<DetailsScreenProps> = ({
   navigation,
   route: {
     params: {itemId},
   },
-}: NavigationScreenProps) => {
+}) => {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>Details Screen</Text>
