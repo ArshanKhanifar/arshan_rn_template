@@ -4,6 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import LoginScreen from './pages/LoginScreen';
 import {AuthProvider} from './hooks/auth';
 import ProfileScreen from './pages/ProfileScreen';
+import FilesystemScreen from './pages/NavigateFilesystemScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -15,6 +16,11 @@ const App = () => {
           {/*
           getExampleScreens(Stack)
            */}
+          <Stack.Screen
+            name="FilesystemScreen"
+            component={FilesystemScreen}
+            options={{title: 'Filesystem Navigator'}}
+          />
           <Stack.Screen
             name="Login"
             component={LoginScreen}
