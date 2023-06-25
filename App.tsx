@@ -7,6 +7,7 @@ import ProfileScreen from './pages/ProfileScreen';
 import FilesystemScreen from './pages/NavigateFilesystemScreen';
 import {YoutubeDownloaderScreen} from './pages/YoutubeDownloaderScreen';
 import VideoURLDownloader from './components/VideoURLDownloader';
+import VideoPlayer from './components/VideoPlayer';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,11 @@ const App = () => {
           {/*
           getExampleScreens(Stack)
            */}
+          <Stack.Screen
+            name="VideoPlayer"
+            component={VideoPlayer}
+            options={{title: 'Video Player'}}
+          />
           <Stack.Screen
             name="VideoURLDownloader"
             component={VideoURLDownloader}
