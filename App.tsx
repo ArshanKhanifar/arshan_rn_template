@@ -5,6 +5,8 @@ import LoginScreen from './pages/LoginScreen';
 import {AuthProvider} from './hooks/auth';
 import ProfileScreen from './pages/ProfileScreen';
 import FilesystemScreen from './pages/NavigateFilesystemScreen';
+import {YoutubeDownloaderScreen} from './pages/YoutubeDownloaderScreen';
+import VideoURLDownloader from './components/VideoURLDownloader';
 
 const Stack = createNativeStackNavigator();
 
@@ -17,9 +19,19 @@ const App = () => {
           getExampleScreens(Stack)
            */}
           <Stack.Screen
+            name="VideoURLDownloader"
+            component={VideoURLDownloader}
+            options={{title: 'VideoURLDownloader Navigator'}}
+          />
+          <Stack.Screen
             name="FilesystemScreen"
             component={FilesystemScreen}
             options={{title: 'Filesystem Navigator'}}
+          />
+          <Stack.Screen
+            name="YoutubeDownloaderScreen"
+            component={YoutubeDownloaderScreen}
+            options={{title: 'Youtube Downloader'}}
           />
           <Stack.Screen
             name="Login"
