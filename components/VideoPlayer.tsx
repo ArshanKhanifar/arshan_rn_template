@@ -1,5 +1,5 @@
-import React, {useEffect, useRef} from 'react';
-import {Button, View} from 'react-native';
+import React, {useRef} from 'react';
+import {View} from 'react-native';
 import Video from 'react-native-video';
 import RNFS from 'react-native-fs';
 
@@ -20,7 +20,8 @@ export const VideoPlayer = () => {
         ignoreSilentSwitch={'ignore'}
         volume={1}
         playInBackground={true}
-        style={{width: '100%', height: 400, backgroundColor: 'white'}}
+        paused={true}
+        style={{width: '100%', height: 300, backgroundColor: 'white'}}
         controls={true}
       />
     </View>
