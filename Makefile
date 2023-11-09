@@ -1,6 +1,13 @@
 .PHONY: enable-youtube
 
-PROJECT_ID := arshan-rn-template
+PROJECT_ID := yt_video_downloader
+OLD_PROJECT_ID := arshan-rn-template
+rename-project:
+	# renaming generic files
+	sed -i 's/"name": "$(OLD_PROJECT_ID)"/"name": "$(PROJECT_ID)"/' package.json
+	sed -i 's/"name": "$(OLD_PROJECT_ID)"/"name": "$(PROJECT_ID)"/' app.json
+	sed -i 's/"displayName": "$(OLD_PROJECT_ID)"/"displayName": "$(PROJECT_ID)"/' app.json
+
 
 get-current-project:
 	$(eval PROJECT_ID := $(shell gcloud config get-value project))
